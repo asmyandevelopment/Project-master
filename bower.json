@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "description": "Project description",
+  "main": "index.js",
+  "authors": [
+    "Asmyan Tigran"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1"
+  }
+}

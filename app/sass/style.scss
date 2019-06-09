@@ -1,0 +1,31 @@
+// BODY STYLES
+@import '_body-styles';
+
+// UTILITIES -
+@import '_utilities/_margin/_margin';
+@import '_utilities/_padding/_padding';
+
+// COMPONENTS -
+@import '_components/_dropdown';
+@import '_components/_badge';
+@import '_components/_btn';
+
+@import '_components/_form/_group';
+@import '_components/_form/_input';
+@import '_components/_form/_checkbox';
+@import '_components/_form/_radio';
+@import '_components/_form/_label';
+@import '_components/_form/_switch';
+
+@import '_components/_post/_post';
+
+@import '_components/_product/_product';
+
+@import '_components/_section/_section';
+@import '_components/_section/_section-advantage';
+    
+// MAIN PARTS -
+@import '_main-parts/_header';
+@import '_main-parts/_main';
+@import '_main-parts/_sidebar';
+@import '_main-parts/_footer';
