@@ -1,0 +1,8 @@
+// Color construct
+@mixin color ($colorName, $color) {
+    .color{
+        &--#{$colorName} {
+            color: $color;
+        }
+    }
+}

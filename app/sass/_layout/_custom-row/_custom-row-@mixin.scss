@@ -1,0 +1,12 @@
+// Row contruct
+@mixin rowSize ($size) {
+	.row{
+		&--#{$size} {
+			margin: 0 -#{$size}px;
+
+			&>div{
+				padding: 0 #{$size}px;
+			}
+		}
+	}
+}
