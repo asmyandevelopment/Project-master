@@ -1,0 +1,48 @@
+// Назамние миксина
+@mixin checkXYMargin ($direction, $size){
+    @if $direction == x {
+        margin: 0 #{$size}px;
+    } 
+    @else if $direction == y {
+        margin: #{$size}px 0;
+    }
+    @else{
+        margin-#{$direction}: #{$size}px;
+    }
+} 
+
+@mixin insertMargin ($direction, $size, $breakpoint) {
+    @if $breakpoint != ''{
+        @if map-has-key($layoutBreakpoint, $breakpoint) {
+            $breakpointValue: map-get($layoutBreakpoint, $breakpoint);
+
+            @media (max-width: $breakpointValue){
+                &--#{$direction}-#{$breakpoint}-#{$size}{
+                    @include checkXYMargin($direction, $size);
+                }
+            }
+        }
+        @else{
+            @media (max-width: #{$breakpoint}px){
+                &--#{$direction}-#{$breakpoint}-#{$size}{
+                    @include checkXYMargin($direction, $size);
+                }
+            }
+        }
+    }
+    @else {
+        &--#{$direction}-#{$size}{
+            @include checkXYMargin($direction, $size);
+        }
+    }
+}
+ 
+@mixin margin ($direction, $size, $breakpoint:''){
+    .margin{
+        @each $directionInclude in 'bottom', 'top', 'left', 'right', 'x', 'y' {
+            @if $direction == $directionInclude {
+                @include insertMargin($direction, $size, $breakpoint);
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+// Подключаем все sass элементы
+@import '__sass/__sass';
+
+/* Футер */
+.#{$preffixSiteFooter}{
+
+	// Нижняя часть
+	@import '__top/__top';
+
+	// Вверхняя часть
+	@import '__bottom/__bottom';
+}

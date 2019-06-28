@@ -1,0 +1,21 @@
+//- Прописываем все переменные
+block sectionVariables
+
+//- Вставляем все переменны на их места
+#{sectionType}(class=section)(id=sectionOptions.sectionId, class=sectionOptions.sectionClasses)
+    .container
+        //- Загаловок секции
+        if sectionOptions.title || sectionOptions.desc
+            div(class= section + '__head')(class= sectionOptions.headClasses)
+                
+                    h2(class=section + '__title')(class=sectionOptions.titleClasses)= sectionOptions.title
+                    p(class=section + '__desc')(class=sectionOptions.descClasses)= sectionOptions.desc
+    
+        //- Контент секции
+        block sectionContent
+        
+        //- Футер секции если опция 'sectionOptions.footer' указана
+        if sectionOptions.footer == 1
+                div(class=section + '__footer')(class=sectionOptions.footerClasses)
+                    block sectionFooter
+    

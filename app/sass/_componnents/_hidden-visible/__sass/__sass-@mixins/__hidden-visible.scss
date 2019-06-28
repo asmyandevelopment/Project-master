@@ -1,0 +1,44 @@
+// Назамние миксина
+@mixin insertHiddenVisible ($key) {
+	.hidden--#{$key}{
+		display: none!important;
+	}
+	.visible--#{$key}{
+		display: block!important;
+	}
+} 
+
+@mixin hiddenVisible () {
+	@each $key, $value in $layoutBreakpoint{
+		.visible--#{$key} {
+			display: none;
+		}
+	}
+	
+	@each $key, $val in $layoutBreakpoint {
+		@if $key == sm {
+			@media (max-width: $val){
+				@include insertHiddenVisible($key);
+			}
+		}
+		@else if $key == md {
+			@media (max-width: map-get($layoutBreakpoint, sm) + 1) and (min-width: $val){
+				@include insertHiddenVisible($key);
+			}
+		}
+		@else if $key == lg {
+			@media (max-width: map-get($layoutBreakpoint, md) + 1) and (min-width: $val){
+				@include insertHiddenVisible($key);
+			}
+		}
+		@else if $key == xl {
+			@media (max-width: map-get($layoutBreakpoint, lg) + 1) and (min-width: $val){
+				@include insertHiddenVisible($key);
+			}
+		}
+	}
+
+	@media (min-width: map-get($layoutBreakpoint, xl) + 1){
+		@include insertHiddenVisible(xl);
+	}
+}

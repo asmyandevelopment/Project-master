@@ -1,0 +1,17 @@
+//- Подключаем общие файлы переменных и миксинов
+include ../products
+
+//- Разметка товара 
+mixin productGridModul (title, desc) 
+	div(class= product)
+		div(class= product + "__thumbnail")
+			img(src='images/products/product.png', alt= title)
+		div(class= product + "__title")= title
+		p(class= product + "__desc")= desc
+
+		div(class= product + "__footer")
+			.row
+				.col-6
+					a.btn(href="") Кнопка 
+				.col-6
+					a.btn(href="") Кнопка

@@ -1,0 +1,24 @@
+//- Уникальные классы для страничек
+block bodyClassesArray
+
+//- Глобальные переменные с JSON файла
+include ../settings-variables/settings-variables
+
+doctype html
+html
+    head
+        //- Head
+        include ../componnents/site-head/site-head
+    body(class=bodyClassesArray)
+        
+        //- Шапка
+        include ../componnents/site-header/site-header
+
+        //- Контент
+        include ../componnents/site-main/site-main
+
+        //- Футер
+        include ../componnents/site-footer/site-footer
+
+        //- Скрипты
+        include ../componnents/site-scripts/site-scripts

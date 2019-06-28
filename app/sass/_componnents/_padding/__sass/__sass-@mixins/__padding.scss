@@ -1,0 +1,48 @@
+// Назамние миксина
+@mixin checkXYPadding ($direction, $size){
+    @if $direction == x {
+        padding: 0 #{$size}px;
+    } 
+    @else if $direction == y {
+        padding: #{$size}px 0;
+    }
+    @else{
+        padding-#{$direction}: #{$size}px;
+    }
+} 
+
+@mixin insertPadding ($direction, $size, $breakpoint) {
+    @if $breakpoint != ''{
+        @if map-has-key($layoutBreakpoint, $breakpoint) {
+            $breakpointValue: map-get($layoutBreakpoint, $breakpoint);
+
+            @media (max-width: $breakpointValue){
+                &--#{$direction}-#{$breakpoint}-#{$size}{
+                    @include checkXYPadding($direction, $size);
+                }
+            }
+        }
+        @else{
+            @media (max-width: #{$breakpoint}px){
+                &--#{$direction}-#{$breakpoint}-#{$size}{
+                    @include checkXYPadding($direction, $size);
+                }
+            }
+        }
+    }
+    @else {
+        &--#{$direction}-#{$size}{
+            @include checkXYPadding($direction, $size);
+        }
+    }
+}
+ 
+@mixin padding ($direction, $size, $breakpoint:''){
+	.padding{
+        @each $directionInclude in 'bottom', 'top', 'left', 'right', 'x', 'y' {
+            @if $direction == $directionInclude {
+                @include insertPadding($direction, $size, $breakpoint);
+            }
+        }
+	}
+}

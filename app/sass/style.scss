@@ -1,33 +1,15 @@
-@import '_utilities/_color/_color';
-
-// BODY STYLES
-@import '_body-styles';
-
-// UTILITIES -
-@import '_utilities/_margin/_margin';
-@import '_utilities/_padding/_padding';
-
-// COMPONENTS -
-@import '_components/_dropdown';
-@import '_components/_badge';
-@import '_components/_btn';
-
-@import '_components/_form/_group';
-@import '_components/_form/_input';
-@import '_components/_form/_checkbox';
-@import '_components/_form/_radio';
-@import '_components/_form/_label';
-@import '_components/_form/_switch';
-
-@import '_components/_post/_post';
-
-@import '_components/_product/_product';
-
-@import '_components/_section/_section';
-@import '_components/_section/_section-advantage';
-    
-// MAIN PARTS -
-@import '_main-parts/_header';
-@import '_main-parts/_main';
-@import '_main-parts/_sidebar';
-@import '_main-parts/_footer';
+// Глобальные переменные с JSON файла
+@import '_settings-variables';
+// Собираем все стили
+@import '_componnents/_sass/_sass';
+@import '_componnents/_body/_body';
+@import '_componnents/_color/_color';
+@import '_componnents/_container/_container';
+@import '_componnents/_align/_align';
+@import '_componnents/_hidden-visible/_hidden-visible.scss';
+@import '_componnents/_row/_row';
+@import '_componnents/_padding/_padding';
+@import '_componnents/_margin/_margin';
+@import '_componnents/_site-header/_site-header';
+@import '_componnents/_site-main/_site-mian';
+@import '_componnents/_site-footer/_site-footer';

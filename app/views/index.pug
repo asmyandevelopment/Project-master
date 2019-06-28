@@ -1,7 +1,19 @@
-extends template-view/main
+//- Подключаем родительский шаблон
+extends page-temps/main-temp
 
-block title
+//- Уникальные классы для боди
+block bodyClassesArray
+    - var bodyClassesArray = ['page-class']
+
+//- Загаловок страницы
+block pageTitle 
     title Home page
 
-block site-main
-    h1 Hello world
+//- Контент
+block siteMain
+
+    // Назвсние секции
+    include componnents/sections/_section-name/_section-name
+
+
+    .hidden-sm "asdasd"

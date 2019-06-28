@@ -1,0 +1,7 @@
+// Центровка элементов по горизантали и по вертикали через флекс
+@mixin itemFullCenter ($inline:'') {
+	@if $inline == inline { display: inline-flex; }
+	@else { display: flex; }
+	align-items: center;
+	justify-content: center;
+}

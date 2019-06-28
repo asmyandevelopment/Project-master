@@ -1,7 +1,0 @@
-/* Margin */
-@import 'margin-@mixin';
-// 1. Направление (top,bottom,left,right,x,y) 
-// 2. размер (Например: 10)
-// 3. для адаптивки (не обязательно)) (Например: 767)
-
-@include margin (bottom, 10);

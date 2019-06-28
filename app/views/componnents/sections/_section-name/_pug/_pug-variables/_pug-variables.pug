@@ -1,0 +1,23 @@
+//- Преффикс
+- var section = removeQuotes(settings.preffix.Section)
+
+//- Тексты секции 
+-
+  	var sectionOptions = {
+        title: 'Загаловок секции',
+        desc: 'Описание секции',
+        footer: true,
+        sectionId: 'section-id',
+        headClasses: ['head-class', 'head-class-2'],
+        titleClasses: [],
+        sectionClasses: [],
+        descClasses: [],
+        footerClasses: [],
+    }
+
+//- Проверяем если имя или описание секции не куазаны удаляем слово 'section' для W3C
+- var sectionType 
+if sectionOptions.title || sectionOptions.desc
+    - var sectionType = 'section'
+else 
+    - var sectionType = 'div'

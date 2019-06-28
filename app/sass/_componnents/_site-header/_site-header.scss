@@ -1,0 +1,11 @@
+// Подключаем все sass элементы
+@import '__sass/__sass';
+
+/* Шапка */
+.#{$preffixSiteHeader}{
+	// Нижняя часть
+	@import '__top/__top';
+
+	// Вверхняя часть
+	@import '__bottom/__bottom';
+}

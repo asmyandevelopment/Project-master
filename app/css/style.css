@@ -1,51 +1,93 @@
-/* Main styles */
+@charset "UTF-8";
 
-/* Margin */
+/* Общие стили */
 
-.margin--b-10 {
-  margin-bottom: 10px;
+/* Цвета */
+
+/* Container */
+
+.container {
+  max-width: 1170px !important;
 }
 
-/* Margin */
+/* Центовка */
 
-.padding--x-10 {
-  padding: 0 10px;
+/* Hidden/Visible */
+
+.visible--sm {
+  display: none;
 }
 
-.padding--y-20 {
-  padding: 20px 0;
+.visible--md {
+  display: none;
 }
 
-/* Dropdown */
+.visible--lg {
+  display: none;
+}
 
-/* Badge */
+.visible--xl {
+  display: none;
+}
 
-/* Btn */
+/* Row */
 
-/* Grop */
+/* Паддинг */
 
-/* Input */
+/* Марджин */
 
-/* Checkbox */
+/* Шапка */
 
-/* Radio */
+/* Контент */
 
-/* Label */
+/* Футер */
 
-/* Switch */
+@media (min-width: 1200px) {
+  .hidden--xl {
+    display: none !important;
+  }
 
-/* Post */
+  .visible--xl {
+    display: block !important;
+  }
+}
 
-/* Product */
+@media (max-width: 575px) {
+  .hidden--sm {
+    display: none !important;
+  }
 
-/* Section */
+  .visible--sm {
+    display: block !important;
+  }
+}
 
-/* Section advantage */
+@media (max-width: 576px) and (min-width: 767px) {
+  .hidden--md {
+    display: none !important;
+  }
 
-/* Header */
+  .visible--md {
+    display: block !important;
+  }
+}
 
-/* Main */
+@media (max-width: 768px) and (min-width: 991px) {
+  .hidden--lg {
+    display: none !important;
+  }
 
-/* Sidebar */
+  .visible--lg {
+    display: block !important;
+  }
+}
 
-/* Footer */
+@media (max-width: 992px) and (min-width: 1199px) {
+  .hidden--xl {
+    display: none !important;
+  }
+
+  .visible--xl {
+    display: block !important;
+  }
+}

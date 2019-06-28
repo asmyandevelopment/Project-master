@@ -1,0 +1,78 @@
+// 1.width, 
+// 2.height, 
+// 3.[top, left, right, bottom, topLeft, topRight, bottomLeft, bottomRight], 
+// 4.color 
+// 5.[after, before, noPseudo]
+
+// Основные стили
+@mixin tringleMainStyle() {
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+// after,before стили
+@mixin tringlePseudo() {
+	content: '';
+	position: absolute;
+	@include tringleMainStyle();
+}
+
+// Направление
+@mixin tringleDirection ($direction, $width, $height, $color) {
+	@if $direction == 'top' {
+		border-width: 0 calc(#{$width}px/2) #{$height}px calc(#{$width}px/2);
+		border-color: transparent transparent $color transparent;
+	}
+	@else if $direction == 'bottom' {
+		border-width: #{$height}px calc(#{$width}px/2) 0 calc(#{$width}px/2);
+		border-color: $color transparent transparent transparent;
+	}
+	@else if $direction == 'right' {
+		border-width: calc(#{$height}px/2) 0 calc(#{$height}px/2) #{$width}px;
+		border-color: transparent transparent transparent $color;
+	}
+	@else if $direction == 'left' {
+		border-width: calc(#{$height}px/2) #{$width}px calc(#{$height}px/2) 0;
+		border-color: transparent $color transparent transparent;
+	}
+	@else if $direction == 'topLeft' {
+		border-width: #{$height}px #{$width}px 0 0;
+		border-color: $color transparent transparent transparent;
+	}
+	@else if $direction == 'topRight' {
+		border-width: 0 #{$width}px #{$height}px 0;
+		border-color: transparent $color transparent transparent;
+	}
+	@else if $direction == 'bottomRight' {
+		border-width: 0 0 #{$height}px #{$width}px;
+		border-color: transparent transparent $color transparent;
+	}
+	@else if $direction == 'bottomLeft' {
+		border-width: #{$height}px 0 0 #{$width}px;
+		border-color: transparent transparent transparent $color;
+	}
+}
+
+// Генерацыя
+@mixin tringle ($width, $height, $direction, $color, $pseudo) {
+	// C before after
+	@if $pseudo == 'before' or $pseudo == 'after' {
+		&:#{$pseudo}{
+			@include tringlePseudo();
+		}
+
+		&:#{$pseudo}{
+			@include tringleDirection($direction, $width, $height, $color);
+		}
+	}
+
+	// Без before after
+	@else if ($pseudo == 'noPseudo') {
+		&{
+			@include tringleMainStyle();
+		}
+		
+		@include tringleDirection($direction, $width, $height, $color);
+	}
+}

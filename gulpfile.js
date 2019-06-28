@@ -6,6 +6,8 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const del = require('del');
 const cache = require('gulp-cache');
+const file = require('gulp-file');
+const jsonConcat = require('gulp-json-concat');
 
 // Css
 const sass = require('gulp-sass');
@@ -14,6 +16,7 @@ const shorthand = require('gulp-shorthand');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const gcmq = require('gulp-group-css-media-queries');
+const jsonToSass = require('gulp-json-data-to-sass');
 
 // Js
 const uglify = require('gulp-uglify');
@@ -21,13 +24,12 @@ const uglify = require('gulp-uglify');
 // HTML
 const pug = require('gulp-pug');
 const gulpPugBeautify = require('gulp-pug-beautify');
-
+const fs = require('fs');
 
 // CSS Lib link
 const cssLibs = [
 	'app/libs/bootstrap/dist/css/bootstrap-reboot.css',
 	'app/libs/bootstrap/dist/css/bootstrap-grid.css',
-	'app/libs/slick/examples/css/style.css'
 ];
 
 // JS Lib link
@@ -46,7 +48,10 @@ function browserSyncReload () {
 
 function pugTemplate () {
 	return src('app/views/*.pug')
-		.pipe(pug({pretty: true}))
+		.pipe(pug({
+			pretty: true,
+			locals: JSON.parse(fs.readFileSync('app/settings-variables.json'))
+		}))
 		.pipe(dest('app/'))
 		.pipe(gulpPugBeautify({ omit_empty: true }))
 		.pipe(browserSync.stream());
@@ -101,11 +106,11 @@ function creatCssLibs () {
 }
 
 function cssSass () {
-	return src('app/sass/**/*.scss')
+	return src('app/sass/style.scss')
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(autoprefixer({browsers: ['last 2 versions'],cascade: false}))
-		.pipe(shorthand())
 		.pipe(gcmq())
+		.pipe(shorthand())
 		.pipe(dest('app/css'))
 		.pipe(browserSync.stream())
 		.pipe(cleanCSS({level: {1: {specialComments: 0}}}))
@@ -114,10 +119,27 @@ function cssSass () {
 		.pipe(browserSync.stream());
 }
 
+function jsonToSassVariable () {
+	return src('app/settings-variables.json')
+		.pipe(jsonToSass({
+			sass: 'app/sass/_settings-variables.scss',
+            separator: ''
+		}))
+}
+
+function concatJsonFiles () {
+	return src('app/settings-variables/**/*.json')
+    .pipe(jsonConcat('settings-variables.json',function(data){
+      	return new Buffer(JSON.stringify(data));
+    }))
+    .pipe(dest('app/'));
+}
+
 function watchFiles () {
 	watch("app/sass/**/*.scss", cssSass);
 	watch("app/js/**/*.js").on('change', browserSync.reload);
 	watch("app/views/**/*.pug", pugTemplate);
+	watch("app/settings-variables/**/*.json", parallel(concatJsonFiles, jsonToSassVariable, pugTemplate));
 }
 
 function deleteDistFolder () {
@@ -141,5 +163,17 @@ async function finish () {
 		.pipe(dest('dist'));
 } 
 
-exports.default = parallel(cssSass, pugTemplate, creatCssLibs, creatJsLibs, watchFiles, browserSyncReload);
-exports.finish = parallel(deleteDistFolder, finish);
+exports.default = parallel(
+	cssSass, 
+	concatJsonFiles,
+	jsonToSassVariable,
+	pugTemplate, 
+	creatCssLibs, 
+	creatJsLibs, 
+	watchFiles, 
+	browserSyncReload
+);
+exports.finish = parallel(
+	deleteDistFolder,
+	finish
+);

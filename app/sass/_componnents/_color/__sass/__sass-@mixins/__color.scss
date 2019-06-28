@@ -1,0 +1,8 @@
+// Назамние миксина
+@mixin color ($colorName, $color) {
+    .color{
+        &--#{$colorName} {
+            color: $color;
+        }
+    }
+}
