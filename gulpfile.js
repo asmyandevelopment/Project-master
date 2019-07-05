@@ -48,11 +48,6 @@ function browserSyncReload () {
 
 function pugTemplate () {
 	return src('app/views/*.pug')
-		.pipe(pug({
-			pretty: true,
-			locals: JSON.parse(fs.readFileSync('app/settings-variables.json'))
-		}))
-		.pipe(dest('app/'))
 		.pipe(gulpPugBeautify({ omit_empty: true }))
 		.pipe(browserSync.stream());
 }
@@ -119,27 +114,10 @@ function cssSass () {
 		.pipe(browserSync.stream());
 }
 
-function jsonToSassVariable () {
-	return src('app/settings-variables.json')
-		.pipe(jsonToSass({
-			sass: 'app/sass/_settings-variables.scss',
-            separator: ''
-		}))
-}
-
-function concatJsonFiles () {
-	return src('app/settings-variables/**/*.json')
-    .pipe(jsonConcat('settings-variables.json',function(data){
-      	return new Buffer(JSON.stringify(data));
-    }))
-    .pipe(dest('app/'));
-}
-
 function watchFiles () {
 	watch("app/sass/**/*.scss", cssSass);
 	watch("app/js/**/*.js").on('change', browserSync.reload);
 	watch("app/views/**/*.pug", pugTemplate);
-	watch("app/settings-variables/**/*.json", parallel(concatJsonFiles, jsonToSassVariable, pugTemplate));
 }
 
 function deleteDistFolder () {
@@ -165,8 +143,6 @@ async function finish () {
 
 exports.default = parallel(
 	cssSass, 
-	concatJsonFiles,
-	jsonToSassVariable,
 	pugTemplate, 
 	creatCssLibs, 
 	creatJsLibs, 
