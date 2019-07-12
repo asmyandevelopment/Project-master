@@ -1,4 +1,4 @@
-// Назамние миксина
+// Align 
 @mixin align ($align, $breakpoint:'') {
 	.align{
 		&--#{$align}{

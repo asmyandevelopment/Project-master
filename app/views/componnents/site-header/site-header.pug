@@ -1,16 +1,13 @@
-//- Подключаем переменные
-include _pug/_pug
-
-// Шапка
-header(class=header)
-	div(class=header + '__top')
+// Header
+header.site-header
+	div.site-header__top
 		.container
-			div(class=header + '__top-row').row.align-items-center
+			div.site-header__top-row.row.align-items-center
 				.col
 					| Шапка шапки
 
-	div(class=header + '__bottom')
+	div.site-header__bottom
 		.container
-			div(class=header + '__bottom-row').row.align-items-center
+			div.site-header__bottom-row.row.align-items-center
 				.col
 					| Футер шапки

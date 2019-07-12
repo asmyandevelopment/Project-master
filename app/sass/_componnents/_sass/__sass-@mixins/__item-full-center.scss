@@ -1,4 +1,4 @@
-// Центровка элементов по горизантали и по вертикали через флекс
+// Item full center in block 
 @mixin itemFullCenter ($inline:'') {
 	@if $inline == inline { display: inline-flex; }
 	@else { display: flex; }

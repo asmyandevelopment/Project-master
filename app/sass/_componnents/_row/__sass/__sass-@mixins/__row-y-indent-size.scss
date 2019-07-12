@@ -1,0 +1,10 @@
+// Cols indent y generator
+@mixin rowYIndent ($size) {
+	.row--y-indent-#{$size}{
+		margin-top: -#{$size}px;
+
+		&>div{
+			padding-bottom: #{$size}px;
+		}
+	}
+}

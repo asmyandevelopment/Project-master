@@ -22,17 +22,17 @@
 			}
 		}
 		@else if $key == md {
-			@media (max-width: map-get($layoutBreakpoint, sm) + 1) and (min-width: $val){
+			@media (min-width: map-get($layoutBreakpoint, sm) + 1) and (max-width: $val){
 				@include insertHiddenVisible($key);
 			}
 		}
 		@else if $key == lg {
-			@media (max-width: map-get($layoutBreakpoint, md) + 1) and (min-width: $val){
+			@media (min-width: map-get($layoutBreakpoint, md) + 1) and (max-width: $val){
 				@include insertHiddenVisible($key);
 			}
 		}
 		@else if $key == xl {
-			@media (max-width: map-get($layoutBreakpoint, lg) + 1) and (min-width: $val){
+			@media (min-width: map-get($layoutBreakpoint, lg) + 1) and (max-width: $val){
 				@include insertHiddenVisible($key);
 			}
 		}

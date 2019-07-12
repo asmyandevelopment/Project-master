@@ -48,7 +48,9 @@ function browserSyncReload () {
 
 function pugTemplate () {
 	return src('app/views/*.pug')
-		.pipe(gulpPugBeautify({ omit_empty: true }))
+		.pipe(pug({pretty: true}))
+		.pipe(dest('app/'))
+		.pipe(gulpPugBeautify({omit_empty: true}))
 		.pipe(browserSync.stream());
 }
 

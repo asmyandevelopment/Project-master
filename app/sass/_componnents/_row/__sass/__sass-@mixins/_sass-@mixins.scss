@@ -1,3 +1,6 @@
 // Подключаем миксины
-@import '__row-size';
-@import '__row-size-responsive';
+@import '__row-x-indent-size';
+@import '__row-x-indent-size-mobile';
+
+@import '__row-y-indent-size';
+@import '__row-y-indent-size-mobile';

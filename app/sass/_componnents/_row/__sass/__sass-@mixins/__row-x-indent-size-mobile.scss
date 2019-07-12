@@ -1,0 +1,41 @@
+// Cols indent x mobile generator
+
+// 1: size,
+// 2: [
+// 	sm: max-width (575px)
+// 	md: max-width (767px)
+// 	lg: max-width (991px)
+// 	xl: max-width (1199px)
+// 	new argument
+// ]
+
+@mixin rowXIndentMobile($size, $breakpoint) {
+	@if map-has-key($layoutBreakpoint, $breakpoint) {
+		$breakpointValue: map-get($layoutBreakpoint, $breakpoint);
+
+		@media (max-width: $breakpointValue){
+			.row--x-indent-#{$size}-#{$breakpoint}{
+				margin-left: -#{$size}px;
+				margin-right: -#{$size}px;
+
+				&>div{
+					padding-left: #{$size}px;
+					padding-right: #{$size}px;
+				}
+			}
+		}
+	}
+	@else{
+		@media (max-width: #{$breakpoint}px) {
+			.row--x-indent-#{$size}-#{$breakpoint}{
+				margin-left: -#{$size}px;
+				margin-right: -#{$size}px;
+
+				&>div{
+					padding-left: #{$size}px;
+					padding-right: #{$size}px;
+				}
+			}
+		}
+	}
+}

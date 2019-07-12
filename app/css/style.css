@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
-/* Общие стили */
+/* Body styles */
+
+body {
+  background: red;
+}
 
 /* Цвета */
 
@@ -36,11 +40,11 @@
 
 /* Марджин */
 
-/* Шапка */
+/* Header */
 
-/* Контент */
+/* content */
 
-/* Футер */
+/* Footer */
 
 @media (min-width: 1200px) {
   .hidden--xl {
@@ -62,7 +66,7 @@
   }
 }
 
-@media (max-width: 576px) and (min-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .hidden--md {
     display: none !important;
   }
@@ -72,7 +76,7 @@
   }
 }
 
-@media (max-width: 768px) and (min-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .hidden--lg {
     display: none !important;
   }
@@ -82,7 +86,7 @@
   }
 }
 
-@media (max-width: 992px) and (min-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .hidden--xl {
     display: none !important;
   }

@@ -1,4 +1,4 @@
-// Назамние миксина
+// Padding
 @mixin checkXYPadding ($direction, $size){
     @if $direction == x {
         padding: 0 #{$size}px;

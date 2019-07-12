@@ -1,0 +1,12 @@
+// Cols x indent generator
+@mixin rowXIndent ($size) {
+	.row--x-indent-#{$size}{
+		margin-left: -#{$size}px;
+		margin-right: -#{$size}px;
+
+		&>div{
+			padding-left: #{$size}px;
+			padding-right: #{$size}px;
+		}
+	}
+}

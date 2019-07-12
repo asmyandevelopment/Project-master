@@ -1,19 +1,14 @@
-//- Подключаем родительский шаблон
-extends page-temps/main-temp
+extends page-temps/index
 
-//- Уникальные классы для боди
+//- Boy classes
 block bodyClassesArray
     - var bodyClassesArray = ['page-class']
 
-//- Загаловок страницы
+//- Page title
 block pageTitle 
     title Home page
 
-//- Контент
+//- Content
 block siteMain
 
-    // Назвсние секции
-    include componnents/sections/_section-name/_section-name
-
-
-    .hidden-sm "asdasd"
+    img(src="images/icon.svg", alt="")

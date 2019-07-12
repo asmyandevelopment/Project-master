@@ -1,4 +1,4 @@
-// Назамние миксина
+// Margin generator
 @mixin checkXYMargin ($direction, $size){
     @if $direction == x {
         margin: 0 #{$size}px;

@@ -1,4 +1,4 @@
-// Назамние миксина
+// Color generator
 @mixin color ($colorName, $color) {
     .color{
         &--#{$colorName} {
