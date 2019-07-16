@@ -1,5 +1,5 @@
-// Подключаем все sass элементы
-@import '__sass/__sass';
+// Import all sass elements
+@import '__sass/sass';
 
 /* Hidden/Visible */
 @include hiddenVisible();

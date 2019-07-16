@@ -1,13 +1,15 @@
 // Собираем все стили
-@import '_componnents/_sass/_sass';
-@import '_componnents/_body/_body';
-@import '_componnents/_color/_color';
-@import '_componnents/_container/_container';
-@import '_componnents/_align/_align';
-@import '_componnents/_hidden-visible/_hidden-visible.scss';
-@import '_componnents/_row/_row';
-@import '_componnents/_padding/_padding';
-@import '_componnents/_margin/_margin';
-@import '_componnents/_site-header/_site-header';
-@import '_componnents/_site-main/_site-mian';
-@import '_componnents/_site-footer/_site-footer';
+@import '_componnents/_sass/sass';
+@import '_componnents/_color/color';
+@import '_componnents/_body/body';
+@import '_componnents/_container/container';
+@import '_componnents/_align/align';
+@import '_componnents/_hidden-visible/hidden-visible.scss';
+@import '_componnents/_row/row';
+@import '_componnents/_form/form';
+@import '_componnents/_padding/padding';
+@import '_componnents/_margin/margin';
+@import '_componnents/_list/list';
+@import '_componnents/_site-header/site-header';
+@import '_componnents/_site-main/site-mian';
+@import '_componnents/_site-footer/site-footer';

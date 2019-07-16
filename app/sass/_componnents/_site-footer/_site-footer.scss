@@ -1,9 +1,5 @@
 /* Footer */
 .site-footer{
-
-	// Нижняя часть
-	@import '__top/__top';
-
-	// Вверхняя часть
-	@import '__bottom/__bottom';
+	@import '__top/top';
+	@import '__bottom/bottom';
 }
