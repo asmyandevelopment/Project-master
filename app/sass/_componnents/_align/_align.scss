@@ -1,5 +1,8 @@
 // Import all sass elments
 @import '__sass/sass';
 
-/* Центовка */
-// @include align (center, md);
+/* Aligns */
+@include align(center);
+
+/* Aligns responsive */
+@include alignMob (center, md);

@@ -1,0 +1,35 @@
+/* Form checkbox */
+.form__checkbox{
+	&-input{
+		display: none;
+
+		&:checked{
+			& + label{
+				&:before{
+					// Background iamge
+					background: $yellow;
+					border-color: $yellow;
+				}
+			}
+		}
+	}
+
+	&-label{
+		position: relative;
+		padding-left: 35px;
+		cursor: pointer;
+
+		&:before{
+			content: '';
+			width: 25px;
+			height: 25px;
+			border:1px solid $gray;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transition: .3s;
+			margin-top: -12px;
+		}
+	}
+}

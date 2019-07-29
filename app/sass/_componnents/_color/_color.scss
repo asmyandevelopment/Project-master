@@ -1,5 +1,8 @@
 // Import all sass elments
 @import '__sass/sass';
 
-/* Цвета */
-// @include color ();
+/* Colors */
+// @include color (red, red);
+
+/* Bg colors */ 
+// @include colorBg(red, red);

@@ -1,0 +1,136 @@
+extends page-temps/index
+
+//- Boy classes
+block bodyClassesArray
+    - var bodyClassesArray = ['page-class']
+
+//- Page title
+block pageTitle 
+    title Components list
+
+//- Content
+block siteMain
+    //- Forms
+    section.section
+        .container
+            .row
+                .col-6
+                    .section__head
+                        h2.section__title Form checkbox
+                        
+                    .form__checbox.form__group
+                        input#checkbox.form__checkbox-input(type="checkbox" checked)
+                        label.form__checkbox-label(for="checkbox") Text content
+
+                    .form__checbox.form__group
+                        input#checkbox2.form__checkbox-input(type="checkbox")
+                        label.form__checkbox-label(for="checkbox2") Text content
+
+                .col-6
+                    .section__head
+                        h2.section__title Form radio
+                        
+                    .form__radio.form__group
+                        input#radio.form__radio-input(type="radio" name="radio")
+                        label.form__radio-label(for="radio") Text content
+
+                    .form__radio.form__group
+                        input#radio2.form__radio-input(type="radio" name="radio" checked)
+                        label.form__radio-label(for="radio2") Text content
+
+                .col-12
+                    .form__group
+                        input.form__input(type="text" placeholder="Инпут")
+
+                    .form__group.form__mix
+                        button.form__mix-icon(type="submit")
+                            | icon
+                        input.form__input(type="text" placeholder="Инпут")
+
+                    .form__group.form__mix
+                        input.form__input(type="text" placeholder="Инпут")
+                        button.form__mix-icon(type="submit")
+                            | icon
+
+    //- Tab
+    section.section.section--theme-dark
+        .container
+            .section__head
+                h2.section__title Tab
+
+            .jsTabContainer
+                ul.tab__controls.jsTabControls.list--unstyled
+                    li: a(href="javasacript:;" data-content-id="content-1").is--active Bla
+                    li: a(href="javasacript:;" data-content-id="content-2") Bla-bla
+                    li: a(href="javasacript:;" data-content-id="content-3") Bla-bla-bla
+                
+                .jsTabContents
+                    #content-1.tab__content.is--show
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quis optio, neque. Fugiat dolore quaerat, rerum dignissimos, repudiandae voluptas. Quibusdam eligendi sed beatae impedit amet corrupti, sunt ipsa ipsum laudantium.
+
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nemo obcaecati adipisci similique repudiandae tempora saepe accusantium doloribus. Autem, non! Earum iure cum, sit, pariatur accusantium facilis soluta mollitia veritatis, tempora quidem ducimus? Nam aspernatur natus, quas obcaecati neque saepe.
+
+                    #content-2.tab__content
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nemo obcaecati adipisci similique repudiandae tempora saepe accusantium doloribus. Autem, non! Earum iure cum, sit, pariatur accusantium facilis soluta mollitia veritatis, tempora quidem ducimus? Nam aspernatur natus, quas obcaecati neque saepe.
+
+                    #content-3.tab__content
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nisi iste odit eum, error qui. Ullam quisquam eveniet quasi omnis.
+
+    //- Accordion
+    section.section
+        .container
+            .section__head
+                h2.section__title Accordion
+            
+            .accordions
+                - var accCount = 0;
+                while accCount < 4
+                    - accCount++
+                    .accordion.jsAcc
+                        if accCount == 1
+                            .accordion__title.jsAccBtn.is--active Title content
+                            
+                            //- .is--show
+                            .accordion__content.jsAccContent
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, necessitatibus corrupti dolores voluptates officiis, consectetur.
+                        else
+                            .accordion__title.jsAccBtn Title content
+
+                            .accordion__content.jsAccContent
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, necessitatibus corrupti dolores voluptates officiis, consectetur.
+    
+    //- jQuery trick
+    section.section.section--theme-dark
+        .container
+            .section__head
+                h2.section__title Show related content
+            
+            .row
+                .col-6
+                    a(href="javascript:;" data-active-text="Закрыть" data-content-id="related-content" class="jsRelatedBtn" data-text="Показать") Показать...
+                    
+                    #related-content(style="display: none")
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat saepe ipsam reprehenderit architecto consectetur ea placeat voluptate sunt esse numquam fuga vero accusamus deserunt repellendus illum aut nulla, optio dolores culpa ab. Impedit architecto iusto quibusdam sequi nam!
+
+                .col-6
+                    a(href="javascript:;" data-active-text="Закрыть" data-content-id="related-content-2" class="jsRelatedBtn" data-text="Показать") Показать...
+                    
+                    #related-content-2(style="display: none")
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat saepe ipsam reprehenderit architecto consectetur ea placeat voluptate sunt esse numquam fuga vero accusamus deserunt repellendus illum aut nulla, optio dolores culpa ab. Impedit architecto iusto quibusdam sequi nam!
+
+    //- Menu 
+    section.section
+        .container
+            .section__head
+                h2.section__title Menu
+                
+                .site-menu
+                    ul.list--unstyled.jsMenu
+                        li: a(href="").is--show Menu item 1
+                        li: a(href="") Menu item 2
+                        li: a(href="") Menu item 3
+                        li: a(href="") Menu item 4
+                        li: a(href="") Menu item 5
+                        li: a(href="") Menu item 6
+
+                    a.site-menu__toggle-btn.jsToggleMenuBtn(href="javascript:;") Btn

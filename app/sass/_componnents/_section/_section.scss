@@ -1,0 +1,15 @@
+/* Section */
+section,.section{
+	padding: 45px 0;
+}
+
+.section{
+	@import '__title/title';
+	@import '__head/head';
+
+	&--theme{
+		&-dark{
+			background: $gray;
+		}
+	}
+}

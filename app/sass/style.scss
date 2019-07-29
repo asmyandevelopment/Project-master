@@ -1,15 +1,22 @@
-// Собираем все стили
-@import '_componnents/_sass/sass';
-@import '_componnents/_color/color';
-@import '_componnents/_body/body';
-@import '_componnents/_container/container';
-@import '_componnents/_align/align';
-@import '_componnents/_hidden-visible/hidden-visible.scss';
-@import '_componnents/_row/row';
-@import '_componnents/_form/form';
-@import '_componnents/_padding/padding';
-@import '_componnents/_margin/margin';
-@import '_componnents/_list/list';
-@import '_componnents/_site-header/site-header';
-@import '_componnents/_site-main/site-mian';
-@import '_componnents/_site-footer/site-footer';
+// Import all styles
+@import 
+'_componnents/_sass/sass.scss',
+'_componnents/_color/color',
+'_componnents/_body/body',
+'_componnents/_container/container',
+'_componnents/_align/align',
+'_componnents/_list/list',
+'_componnents/_hidden-visible/hidden-visible',
+'_componnents/_row/row',
+'_componnents/_form/form',
+'_componnents/_btn/btn',
+'_componnents/_padding/padding',
+'_componnents/_margin/margin',
+'_componnents/_section/_section',
+'_componnents/_tab/tab',
+'_componnents/_link/link',
+'_componnents/_accordion/accordion',
+'_componnents/_site-header/site-header',
+'_componnents/_site-main/site-mian',
+'_componnents/_site-menu/site-menu',
+'_componnents/_site-footer/site-footer';

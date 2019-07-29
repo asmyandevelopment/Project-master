@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Components list</title>
+  </head>
+  <body class="page-class">
+    <!-- Header-->
+    <header class="site-header">
+      <div class="container"></div>
+    </header>
+    <!-- Контент-->
+    <main class="site-main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <div class="section__head">
+                <h2 class="section__title">Form checkbox</h2>
+              </div>
+              <div class="form__checbox form__group">
+                <input class="form__checkbox-input" id="checkbox" type="checkbox" checked>
+                <label class="form__checkbox-label" for="checkbox">Text content</label>
+              </div>
+              <div class="form__checbox form__group">
+                <input class="form__checkbox-input" id="checkbox2" type="checkbox">
+                <label class="form__checkbox-label" for="checkbox2">Text content</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="section__head">
+                <h2 class="section__title">Form radio</h2>
+              </div>
+              <div class="form__radio form__group">
+                <input class="form__radio-input" id="radio" type="radio" name="radio">
+                <label class="form__radio-label" for="radio">Text content</label>
+              </div>
+              <div class="form__radio form__group">
+                <input class="form__radio-input" id="radio2" type="radio" name="radio" checked>
+                <label class="form__radio-label" for="radio2">Text content</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form__group">
+                <input class="form__input" type="text" placeholder="Инпут">
+              </div>
+              <div class="form__group form__mix">
+                <button class="form__mix-icon" type="submit">icon</button>
+                <input class="form__input" type="text" placeholder="Инпут">
+              </div>
+              <div class="form__group form__mix">
+                <input class="form__input" type="text" placeholder="Инпут">
+                <button class="form__mix-icon" type="submit">icon</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--theme-dark">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Tab</h2>
+          </div>
+          <div class="jsTabContainer">
+            <ul class="tab__controls jsTabControls list--unstyled">
+              <li><a class="is--active" href="javasacript:;" data-content-id="content-1">Bla</a></li>
+              <li><a href="javasacript:;" data-content-id="content-2">Bla-bla</a></li>
+              <li><a href="javasacript:;" data-content-id="content-3">Bla-bla-bla</a></li>
+            </ul>
+            <div class="jsTabContents">
+              <div class="tab__content is--show" id="content-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quis optio, neque. Fugiat dolore quaerat, rerum dignissimos, repudiandae voluptas. Quibusdam eligendi sed beatae impedit amet corrupti, sunt ipsa ipsum laudantium.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nemo obcaecati adipisci similique repudiandae tempora saepe accusantium doloribus. Autem, non! Earum iure cum, sit, pariatur accusantium facilis soluta mollitia veritatis, tempora quidem ducimus? Nam aspernatur natus, quas obcaecati neque saepe.</p>
+              </div>
+              <div class="tab__content" id="content-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nemo obcaecati adipisci similique repudiandae tempora saepe accusantium doloribus. Autem, non! Earum iure cum, sit, pariatur accusantium facilis soluta mollitia veritatis, tempora quidem ducimus? Nam aspernatur natus, quas obcaecati neque saepe.</p>
+              </div>
+              <div class="tab__content" id="content-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nisi iste odit eum, error qui. Ullam quisquam eveniet quasi omnis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Accordion</h2>
+          </div>
+          <div class="accordions">
+            <div class="accordion jsAcc">
+              <div class="accordion__title jsAccBtn is--active">Title content</div>
+              <div class="accordion__content jsAccContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, necessitatibus corrupti dolores voluptates officiis, consectetur.</div>
+            </div>
+            <div class="accordion jsAcc">
+              <div class="accordion__title jsAccBtn">Title content</div>
+              <div class="accordion__content jsAccContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, necessitatibus corrupti dolores voluptates officiis, consectetur.</div>
+            </div>
+            <div class="accordion jsAcc">
+              <div class="accordion__title jsAccBtn">Title content</div>
+              <div class="accordion__content jsAccContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, necessitatibus corrupti dolores voluptates officiis, consectetur.</div>
+            </div>
+            <div class="accordion jsAcc">
+              <div class="accordion__title jsAccBtn">Title content</div>
+              <div class="accordion__content jsAccContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, necessitatibus corrupti dolores voluptates officiis, consectetur.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--theme-dark">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Show related content</h2>
+          </div>
+          <div class="row">
+            <div class="col-6"><a class="jsRelatedBtn" href="javascript:;" data-active-text="Закрыть" data-content-id="related-content" data-text="Показать">Показать...</a>
+              <div id="related-content" style="display: none">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat saepe ipsam reprehenderit architecto consectetur ea placeat voluptate sunt esse numquam fuga vero accusamus deserunt repellendus illum aut nulla, optio dolores culpa ab. Impedit architecto iusto quibusdam sequi nam!</p>
+              </div>
+            </div>
+            <div class="col-6"><a class="jsRelatedBtn" href="javascript:;" data-active-text="Закрыть" data-content-id="related-content-2" data-text="Показать">Показать...</a>
+              <div id="related-content-2" style="display: none">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat saepe ipsam reprehenderit architecto consectetur ea placeat voluptate sunt esse numquam fuga vero accusamus deserunt repellendus illum aut nulla, optio dolores culpa ab. Impedit architecto iusto quibusdam sequi nam!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Menu</h2>
+            <div class="site-menu">
+              <ul class="list--unstyled jsMenu">
+                <li><a class="is--show" href="">Menu item 1</a></li>
+                <li><a href="">Menu item 2</a></li>
+                <li><a href="">Menu item 3</a></li>
+                <li><a href="">Menu item 4</a></li>
+                <li><a href="">Menu item 5</a></li>
+                <li><a href="">Menu item 6</a></li>
+              </ul><a class="site-menu__toggle-btn jsToggleMenuBtn" href="javascript:;">Btn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="site-footer">
+      <div class="container"></div>
+    </footer>
+    <!-- Scripts-->
+    <script src="js/libs.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

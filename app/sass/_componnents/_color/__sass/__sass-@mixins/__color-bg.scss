@@ -1,0 +1,8 @@
+// Color generator
+@mixin colorBg ($colorName, $color) {
+    .color-bg{
+        &--#{$colorName} {
+            background: $color;
+        }
+    }
+}

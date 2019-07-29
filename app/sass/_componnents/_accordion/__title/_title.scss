@@ -1,0 +1,9 @@
+// Accordion title
+&__title{
+	font-size: 18px;
+	margin-bottom: -1px;
+	padding: 10px 15px;
+	cursor: pointer;
+	border: 1px solid $yellow;
+	background: lighten($yellow, 15%);
+}

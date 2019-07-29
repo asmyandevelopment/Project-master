@@ -1,4 +1,12 @@
-/* Body styles */
+/* Body */
+*{
+	&,&:focus{
+		outline: none;
+	}
+}
 body{
-	background: red;	
+	font-family: sans-serif;
+	font-size: 16px;
+	color: #333;
+	line-height: 1.5;
 }

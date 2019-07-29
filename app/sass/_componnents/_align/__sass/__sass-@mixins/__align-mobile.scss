@@ -1,0 +1,21 @@
+// Align mobile generator
+@mixin alignMob ($align, $breakpoint) {
+	.align{
+        @if map-has-key($layoutBreakpoint, $breakpoint) {
+            $breakpointValue: map-get($layoutBreakpoint, $breakpoint);
+
+            @media (max-width: $breakpointValue){
+                &--#{$breakpoint}-#{$align}{
+                    text-align: $align;
+                }
+            }
+        }
+        @else{
+            @media (max-width: #{$breakpoint}px){
+                &--#{$breakpoint}-#{$align}{
+                    text-align: $align;
+                }
+            }
+        }
+	}
+}

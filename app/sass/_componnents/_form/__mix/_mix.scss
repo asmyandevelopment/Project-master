@@ -1,0 +1,29 @@
+/* Form mix icon input */
+.form__mix{
+	position: relative;
+	
+	input{
+		&:first-child{
+			padding-right: 60px;
+		}
+
+		&:last-child{
+			padding-left: 60px;
+		}
+	}
+
+	&-icon{
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		border:none;
+		width: 50px;
+
+		&:last-child{
+			right: 0;
+		}
+		&:first-child{
+			left: 0;
+		}
+	}
+}

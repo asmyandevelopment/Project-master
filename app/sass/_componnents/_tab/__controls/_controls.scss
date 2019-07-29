@@ -1,0 +1,16 @@
+// Tab controls
+&__controls{
+	display: flex;
+	margin-bottom: 25px;
+
+	a{
+		padding: 10px 15px;
+		display: block;
+		transition: background .3s;
+
+		&.is--active{
+			background: $yellow;
+			color: white;
+		}
+	}
+}

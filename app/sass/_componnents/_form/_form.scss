@@ -1,5 +1,6 @@
-// Form
-.form{
-	@import '__input/input';
-	@import '__group/group';
-}
+// Forms
+@import '__input/input';
+@import '__group/group';
+@import '__checkbox/checkbox';
+@import '__radio/radio';
+@import '__mix/mix';
