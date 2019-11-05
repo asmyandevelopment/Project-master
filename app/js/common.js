@@ -89,5 +89,5 @@ $(function() {
 			menu.stop().slideToggle();
 		});
 	})();
-	
+
 });

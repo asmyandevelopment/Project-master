@@ -64,7 +64,7 @@ function creatJsLibs () {
 			.pipe(dest('app/js'))
 			.pipe(uglify())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(dest('app/js'));
+			.pipe(dest('app/js/minify-version/'));
 	}
 
 	else{
@@ -89,7 +89,7 @@ function creatCssLibs () {
 			.pipe(dest('app/css'))
 			.pipe(cleanCSS({level: {1: {specialComments: 0}}}))
 			.pipe(rename({suffix: '.min'}))
-			.pipe(dest('app/css'));
+			.pipe(dest('app/css/minify-version'));
 	}
 	else{
 		return del.sync(
@@ -112,7 +112,7 @@ function cssSass () {
 		.pipe(browserSync.stream())
 		.pipe(cleanCSS({level: {1: {specialComments: 0}}}))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(dest('app/css'))
+		.pipe(dest('app/css/minify-version'))
 		.pipe(browserSync.stream());
 }
 
