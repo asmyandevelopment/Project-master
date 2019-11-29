@@ -1,13 +1,13 @@
 /* Form input */
 .form__input{
-	border: 1px solid $gray;
+	border: 1px solid red;
 	height: 45px;
 	padding-left: 15px;
 	width: 100%;
-	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
 	&:focus{
-		border-color: $yellow;
+		border-color: red;
 		box-shadow: 0 0 0 0.2rem rgba(254, 215 ,23 ,.25);
 	}
 

@@ -6,8 +6,6 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const del = require('del');
 const cache = require('gulp-cache');
-const file = require('gulp-file');
-const jsonConcat = require('gulp-json-concat');
 
 // Css
 const sass = require('gulp-sass');
@@ -16,7 +14,7 @@ const shorthand = require('gulp-shorthand');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const gcmq = require('gulp-group-css-media-queries');
-const jsonToSass = require('gulp-json-data-to-sass');
+const uncss = require('gulp-uncss');
 
 // Js
 const uglify = require('gulp-uglify');
@@ -128,6 +126,9 @@ function deleteDistFolder () {
 
 async function finish () {
 	const finishCss = src('app/css/**/*.css')
+		.pipe(uncss({
+            html: ['app/*.html']
+        }))
 		.pipe(dest('dist/css'));
 
 	const finishImages = src('app/images/**/*')

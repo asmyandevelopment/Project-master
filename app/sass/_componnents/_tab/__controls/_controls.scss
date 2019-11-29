@@ -9,7 +9,7 @@
 		transition: background .3s;
 
 		&.is--active{
-			background: $yellow;
+			background: red;
 			color: white;
 		}
 	}

@@ -7,8 +7,8 @@
 			& + label{
 				&:before{
 					// Background iamge
-					background: $yellow;
-					border-color: $yellow;
+					background: red;
+					border-color: red;
 				}
 			}
 		}
@@ -23,7 +23,7 @@
 			content: '';
 			width: 25px;
 			height: 25px;
-			border:1px solid $gray;
+			border:1px solid red;
 			display: block;
 			position: absolute;
 			top: 50%;
