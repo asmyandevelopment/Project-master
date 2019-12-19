@@ -1,0 +1,1 @@
+# Pug start template
