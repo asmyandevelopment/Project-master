@@ -5,7 +5,6 @@ const { src, dest, parallel, watch, series } = require('gulp'); // Gulp
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const del = require('del');
-const cache = require('gulp-cache');
 
 // Css
 const sass = require('gulp-sass');
@@ -14,7 +13,6 @@ const shorthand = require('gulp-shorthand');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const gcmq = require('gulp-group-css-media-queries');
-const uncss = require('gulp-uncss');
 
 // Js
 const uglify = require('gulp-uglify');
@@ -28,11 +26,13 @@ const fs = require('fs');
 const cssLibs = [
 	'app/libs/bootstrap/dist/css/bootstrap-reboot.css',
 	'app/libs/bootstrap/dist/css/bootstrap-grid.css',
+	'app/libs/slick-carousel/slick/slick.css'
 ];
 
 // JS Lib link
 const jsLibs = [
-	'app/libs/jquery/dist/jquery.js'
+	'app/libs/jquery/dist/jquery.js',
+	'app/libs/slick-carousel/slick/slick.js'
 ];
 
 function browserSyncReload () {
@@ -126,9 +126,6 @@ function deleteDistFolder () {
 
 async function finish () {
 	const finishCss = src('app/css/**/*.css')
-		.pipe(uncss({
-            html: ['app/*.html']
-        }))
 		.pipe(dest('dist/css'));
 
 	const finishImages = src('app/images/**/*')

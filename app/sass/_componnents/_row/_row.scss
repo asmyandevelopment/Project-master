@@ -2,5 +2,4 @@
 @import '__sass/sass';
 
 /* Row */
-// @include rowSize();
-// @include rowSizeResponsive();
+@include rowXIndent(10, md);

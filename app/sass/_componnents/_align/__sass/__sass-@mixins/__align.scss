@@ -1,8 +1,29 @@
 // Align generator
-@mixin align ($align) {
+@mixin align ($align, $breakpoint:'') {
 	.align{
-		&--#{$align}{
-			text-align: $align;
+		// Mobile
+		@if $breakpoint != '' {
+			@if map-has-key($layoutBreakpoint, $breakpoint) {
+	            $breakpointValue: map-get($layoutBreakpoint, $breakpoint);
+
+	            @media (max-width: $breakpointValue){
+	                &--#{$breakpoint}-#{$align}{
+	                    text-align: $align;
+	                }
+	            }
+	        }
+	        @else{
+	            @media (max-width: #{$breakpoint}px){
+	                &--#{$breakpoint}-#{$align}{
+	                    text-align: $align;
+	                }
+	            }
+	        }
+		}
+		@else {
+			&--#{$align}{
+				text-align: $align;
+			}
 		}
 	}
 }

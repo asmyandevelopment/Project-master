@@ -1,0 +1,15 @@
+/*Slick*/
+.slick {
+  &--preloader{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+
+    &.slick-initialized {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+

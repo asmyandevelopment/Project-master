@@ -24,12 +24,6 @@ body {
 
 /* Aligns */
 
-.align--center {
-  text-align: center;
-}
-
-/* Aligns responsive */
-
 /* List */
 
 .list--unstyled {
@@ -272,6 +266,20 @@ a:hover {
   position: relative;
 }
 
+/*Slick*/
+
+.slick--preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.slick--preloader.slick-initialized {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Header */
 
 /* Site menu */
@@ -377,6 +385,16 @@ a:hover {
 @media (max-width: 767px) {
   .align--md-center {
     text-align: center;
+  }
+
+  .row--x-indent-10-md {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .row--x-indent-10-md > div {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .form__input {

@@ -1,0 +1,24 @@
+include ../import-componnents
+
+//- Body unique classes
+block bodyClassesArray
+
+doctype html
+html
+    head
+        //- Head
+        +siteHead()
+
+    body(class=bodyClassesArray)
+        
+        //- Header
+        +siteHeader()
+
+        //- Main
+        +siteMain
+
+        //- FooterS
+        +siteFooter
+
+        //- Scripts
+        +siteScripts

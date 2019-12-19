@@ -2,7 +2,4 @@
 @import '__sass/sass';
 
 /* Aligns */
-@include align(center);
-
-/* Aligns responsive */
-@include alignMob (center, md);
+@include align(center, md);
