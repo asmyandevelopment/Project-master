@@ -1,6 +1,6 @@
 # Pug start template
 
-** Get started **
+**Get started**
 
 1. Dependency installation (node_modules folder)
 ```
